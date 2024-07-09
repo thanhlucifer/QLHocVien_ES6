@@ -1,15 +1,16 @@
-// Lớp Student kế thừa từ Person
+
 class Student extends Person {
-    constructor(name, address, id, email, math, physics, chemistry) {
+    constructor(name, address, id, email, mathGrade = 0, physicsGrade = 0, chemistryGrade = 0) {
         super(name, address, id, email);
-        this.math = math;
-        this.physics = physics;
-        this.chemistry = chemistry;
         this.type = 'student';
+        this.mathGrade = mathGrade;
+        this.physicsGrade = physicsGrade;
+        this.chemistryGrade = chemistryGrade;
     }
 
-    // Tính điểm trung bình
-    getAverageScore() {
-        return (this.math + this.physics + this.chemistry) / 3;
+    calculateAverageGrade() {
+        const numberOfSubjects = 3; // Assume always calculating average of three subjects: Math, Physics, Chemistry
+        const totalGrades = this.mathGrade + this.physicsGrade + this.chemistryGrade;
+        return totalGrades / numberOfSubjects;
     }
 }

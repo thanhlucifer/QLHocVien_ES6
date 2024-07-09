@@ -1,14 +1,13 @@
-// Lớp Employee kế thừa từ Person
 class Employee extends Person {
-    constructor(name, address, id, email, workDays, salaryPerDay) {
+    constructor(name, address, id, email, salary = 0, daysWorked = 0) {
         super(name, address, id, email);
-        this.workDays = workDays;
-        this.salaryPerDay = salaryPerDay;
         this.type = 'employee';
+        this.salary = salary;
+        this.daysWorked = daysWorked;
     }
 
-    // Tính lương
     calculateSalary() {
-        return this.workDays * this.salaryPerDay;
+        const salaryVND = this.salary * this.daysWorked;
+        return `${salaryVND.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}`;
     }
 }

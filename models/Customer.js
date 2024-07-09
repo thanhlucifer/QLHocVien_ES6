@@ -1,9 +1,6 @@
 class Customer extends Person {
-    constructor(name, address, id, email, companyName, invoiceValue, rating) {
+    constructor(name, address, id, email) {
         super(name, address, id, email);
-        this.companyName = companyName;
-        this.invoiceValue = invoiceValue;
-        this.rating = rating;
         this.type = 'customer';
     }
 }

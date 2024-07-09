@@ -43,6 +43,15 @@
         </form>
 
         <!-- Bảng hiển thị người dùng -->
+        <div class="mb-3">
+            <button class="btn btn-secondary" onclick="sortByName()">Sắp xếp theo họ tên</button>
+            <select class="form-select d-inline w-auto" id="filterType" onchange="filterByType()">
+                <option value="">Tất cả</option>
+                <option value="student">Học viên</option>
+                <option value="employee">Giảng viên</option>
+                <option value="customer">Khách hàng</option>
+            </select>
+        </div>
         <table class="table table-striped" id="personTable">
             <thead>
                 <tr>
@@ -51,6 +60,8 @@
                     <th>Mã</th>
                     <th>Email</th>
                     <th>Loại người dùng</th>
+                    <th>DTB</th>
+                    <th>Lương</th>
                     <th>Hành động</th>
                 </tr>
             </thead>

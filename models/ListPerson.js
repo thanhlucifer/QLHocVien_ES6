@@ -29,4 +29,11 @@ class ListPerson {
     setPersons(persons) {
         this.persons = persons;
     }
+
+    sortByName() {
+        this.persons.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+
+  
 }
