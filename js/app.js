@@ -12,11 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle add/update person event
     addPersonForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        
         const name = document.getElementById('name').value;
         const address = document.getElementById('address').value;
         const id = document.getElementById('id').value;
         const email = document.getElementById('email').value;
         const type = document.getElementById('type').value;
+
+        const tbMa = document.getElementById('tbMa');
+        const tbName = document.getElementById('tbName');
+        const tbEmail = document.getElementById('tbEmail');
+        const tbLoai = document.getElementById('tbLoai');
+        
+        let isValid = true;
+
+        // Validate fields
+        if (!checkAccountFormat(id, tbMa)) isValid = false;
+        if (!checkName(name, tbName)) isValid = false;
+        if (!checkEmail(email, tbEmail)) isValid = false;
+        if (!checkPosition(type, tbLoai)) isValid = false;
+        if (!isValid) {
+            return;
+        }
 
         let person;
         if (type === 'student') {

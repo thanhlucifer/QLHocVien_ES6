@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý học viện</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <h1 class="mt-4">Quản lý học viện</h1>
-        
+
         <!-- Form thêm người dùng -->
         <form id="addPersonForm" class="mb-4">
             <div class="row g-3">
                 <div class="col-md-6">
+                    <label for="id" class="form-label">Mã</label>
+                    <input type="text" class="form-control" id="id" required >
+                    <span class="sp-thongbao" id="tbMa"></span>
+                </div>
+                <div class="col-md-6">
                     <label for="name" class="form-label">Họ tên</label>
-                    <input type="text" class="form-control" id="name" required>
+                    <input type="text" class="form-control" id="name" required >
+                    <span class="sp-thongbao" id="tbName"></span>
                 </div>
                 <div class="col-md-6">
                     <label for="address" class="form-label">Địa chỉ</label>
                     <input type="text" class="form-control" id="address" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="id" class="form-label">Mã</label>
-                    <input type="text" class="form-control" id="id" required>
-                </div>
-                <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input type="email" class="form-control" id="email" required >
+                    <span class="sp-thongbao" id="tbEmail"></span>
                 </div>
                 <div class="col-md-6">
                     <label for="type" class="form-label">Loại người dùng</label>
-                    <select class="form-select" id="type" required>
+                    <select class="form-select" id="type" required >
                         <option value="student">Học viên</option>
                         <option value="employee">Giảng viên</option>
                         <option value="customer">Khách hàng</option>
                     </select>
+                    <span class="sp-thongbao" id="tbLoai"></span>
                 </div>
                 <div id="extraFields" class="col-12"></div>
             </div>
@@ -43,8 +49,8 @@
         </form>
 
         <!-- Bảng hiển thị người dùng -->
-        <div class="mb-3">
-            <button class="btn btn-secondary" onclick="sortByName()">Sắp xếp theo họ tên</button>
+        <div class="mb-3 gap-3">
+            <button class="btn btn-success" onclick="sortByName()">Sắp xếp theo họ tên</button>
             <select class="form-select d-inline w-auto" id="filterType" onchange="filterByType()">
                 <option value="">Tất cả</option>
                 <option value="student">Học viên</option>
@@ -73,6 +79,8 @@
     <script src="./models/Employee.js"></script>
     <script src="./models/Customer.js"></script>
     <script src="./models/ListPerson.js"></script>
+    <script src="./validations/validation.js"></script>
     <script src="./js/app.js"></script>
 </body>
+
 </html>
